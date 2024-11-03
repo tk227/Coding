@@ -1,0 +1,287 @@
+/* Universal Box-Sizing */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.heading {
+  text-align: center; /* Center the text horizontally */
+  margin-top: 40px; /* Add space above the heading */
+  margin-bottom: 30px; /* Add space below the heading */
+}
+
+.heading span {
+  font-size: 3em; /* Large text size for the heading */
+  font-weight: bold; /* Make the text bold */
+  color: #ffffff; /* Dark color for the text */
+  text-transform: uppercase; /* Capitalize the text */
+  letter-spacing: 4px; /* Add space between letters */
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow to the text */
+  display: inline-block; /* Ensure the span is inline but can have block styling */
+}
+
+@media (max-width: 768px) {
+  .heading span {
+    font-size: 2.5em; /* Slightly smaller text on tablets */
+    letter-spacing: 3px; /* Adjust letter spacing on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .heading span {
+    font-size: 2em; /* Smaller font size on mobile devices */
+    letter-spacing: 2px; /* Adjust letter spacing on mobile */
+  }
+}
+
+
+body {
+
+    background-image: url('t.jpg'); /* Replace with your image path */
+    background-size: cover; /* Makes the background cover the entire viewport */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Ensures the background does not repeat */
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Container for Sidebar and Stage */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Left Sidebar Styling */
+.left-sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 250x;
+  padding: 10px;
+  background: #99fc8c;
+  border-radius: 8px;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* New Game Section */
+.new-game {
+  border: 1px solid #FFF;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 10px;
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #2d8f8f;
+}
+
+.new-game select {
+  background: #5db2dd;
+  color: #FFF;
+  padding: 8px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.new-game select:hover {
+  background: #45a8cc;
+}
+
+.new-game button {
+  background: #a18492;
+  border-radius: 9px;
+  border-style: none;
+  color: #FFF;
+  cursor: pointer;
+  padding: 8px 18px;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+
+.new-game button:hover {
+  background: #f082ac;
+}
+
+/* Speed Control */
+.speed {
+  border: 1px solid #FFF;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+  background: #2d8f8f;
+}
+
+.speed p {
+  font-size: 14px;
+  font-weight: lighter;
+  color: floralwhite;
+  margin-bottom: 5px;
+}
+
+#speedRange {
+  width: 100%;
+  height: 5px;
+  border-radius: 5px;
+  background: #f0f0f0;
+  appearance: none;
+  outline: none;
+}
+
+#speedRange::-webkit-slider-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #a18492;
+  cursor: pointer;
+}
+
+#speedRange::-webkit-slider-thumb:hover {
+  background: #f082ac;
+}
+
+#speedRange::-webkit-slider-track {
+  height: 3px;
+  background: #5db2dd;
+}
+
+/* Button for Solve */
+.buttons {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+button {
+  background: #9b4770;
+  border-radius: 9px;
+  border-style: none;
+  color: #FFF;
+  cursor: pointer;
+  padding: 8px 18px;
+  margin-top: 20px;
+  width: 100%;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #f082ac;
+}
+
+/* Stage - where the towers are displayed */
+.stage {
+  height: 200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 8px;
+  gap: 10px;
+  padding: 10px;
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Tower Design */
+.tower {
+  width: 200px;
+  height: 200px;
+  background: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(238, 8, 8, 0.2);
+}
+
+.stem {
+  width: 10px;
+  height: 140px;
+  background: #000;
+  position: relative;
+  border-radius: 5px;
+}
+
+.plate {
+  width: 115px;
+  height: 10px;
+  background: rgb(255, 0, 0);
+  border-radius: 10px;
+  z-index: 1;
+  margin: 5px 0;
+}
+
+/* Disc Styling */
+.disc {
+  height: 18px;
+  border-radius: 3px;
+  z-index: 1;
+  background-color: #ff6f61;
+  margin: 5px 0;
+}
+
+.is-dragging {
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover and Focus Effects */
+button:hover, select:hover, input[type="range"]:hover {
+  background: #f082ac;
+}
+
+input[type="range"]:focus {
+  outline: 2px solid #f082ac;
+}
+
+button:focus {
+  outline: 2px solid #f082ac;
+  outline-offset: 4px;
+}
+#outputMoves {
+  background-color: #fff; /* White background for contrast */
+  color: #333; /* Dark text for readability */
+  border: 2px solid #ccc; /* Light gray border to distinguish the area */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Padding inside for space around the text */
+  margin-top: 20px; /* Space above the output box */
+  width: 100%; /* Make it take full width of its container */
+  max-width: 600px; /* Set a max width so it doesn't grow too wide */
+  font-family: 'Arial', sans-serif; /* Clean, readable font */
+  font-size: 1.1em; /* Slightly larger text for better legibility */
+  line-height: 1.6; /* More line spacing for clarity */
+  overflow-y: auto; /* Allow scrolling if content overflows */
+  height: 200px; /* Limit the height, useful if content overflows */
+}
+
+@media (max-width: 768px) {
+  #outputMoves {
+    width: 100%; /* Full width on smaller screens */
+    max-width: none; /* No maximum width for responsive screens */
+    font-size: 1em; /* Adjust font size for smaller devices */
+  }
+}
+
+@media (max-width: 480px) {
+  #outputMoves {
+    padding: 15px; /* Less padding on very small screens */
+    font-size: 0.9em; /* Slightly smaller text on mobile */
+  }
+}
+
